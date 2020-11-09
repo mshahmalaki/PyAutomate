@@ -27,7 +27,7 @@ def organize_directory():
         directory = pick_directory(file_type)
         directory_path = Path(directory)
         if not directory_path.is_dir():
-            if file_type == '.py':
+            if file_type == '.py' or file_type == '.md':
                 continue
             directory_path.mkdir()
         file_path.rename(directory_path.joinpath(file_path))

@@ -1,3 +1,7 @@
+from os import scandir
+from pathlib import Path
+
+
 SUBDIRECTORIES = {
     "Document": ['.pdf', '.doc', '.docx', '.rtf', '.txt'],
     "Audio": ['.m4a', '.m4b', '.mp3', '.wma'],
@@ -11,6 +15,22 @@ def pick_directory(value):
         for suffix in suffixes:
             if suffix == value:
                 return category
+    return 'Miscellaneous'
 
 
-print(pick_directory('.docx'))
+def organize_directory():
+    for item in scandir():
+        if item.is_dir():
+            continue
+        file_path = Path(item)
+        file_type = file_path.suffix.lower()
+        directory = pick_directory(file_type)
+        directory_path = Path(directory)
+        if not directory_path.is_dir():
+            if file_type == '.py':
+                continue
+            directory_path.mkdir()
+        file_path.rename(directory_path.joinpath(file_path))
+
+
+organize_directory()

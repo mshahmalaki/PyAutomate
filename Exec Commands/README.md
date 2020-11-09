@@ -1,4 +1,4 @@
-Execute Terminal Commands
+## Execute Terminal Commands
 ```bash
 python script.py
 ```

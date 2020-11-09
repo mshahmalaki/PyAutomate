@@ -1,9 +1,9 @@
-Web Scraping with Beautiful Soup
+## Web Scraping with Beautiful Soup
 ```bash
 python scrape.py
 ```
 
-for url with paginated contents:
+## for url with paginated contents:
 ```bash
 python srapePages.py
 ```

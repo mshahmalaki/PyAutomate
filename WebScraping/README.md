@@ -15,7 +15,7 @@ python scrape.py
 python srapePages.py
 ```
 
-### USB flash drive price scraaping from Digikal.com
+### USB flash drive price scraping from Digikal.com
 ```bash
 python scrapeDK.py > scrapeDK.txt
 ```
